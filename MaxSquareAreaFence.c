@@ -1,3 +1,4 @@
+// https://leetcode.com/problems/maximum-square-area-by-removing-fences-from-a-field/
 int maximizeSquareArea(int m, int n, int *hFences, int hFencesSize, int *vFences, int vFencesSize)
 {
     // int hi = 0, vi = 0;
@@ -32,10 +33,10 @@ int maximizeSquareArea(int m, int n, int *hFences, int hFencesSize, int *vFences
             if(n==hFences[i] || n-1==m-hFences[i]) return ((n-1)*(n-1))%mod;
             if(m==vFences[j] || m-1==n-vFences[j]) return ((m-1)*(m-1))%mod;
             if(hFences[i] == vFences[j] || m-hFences[i] == vFences[j]-1) {
-                if (area<vFences[j]*vFences[j]) area=(vFences[j]-1)*(vFences[j]-1) ;
+                if (area<(vFences[j]-1)*(vFences[j]-1)) area=(vFences[j]-1)*(vFences[j]-1) ;
             }
             if(vFences[j] == hFences[i] || n-vFences[j] == hFences[i]-1) {
-                if (area<hFences[i]*hFences[i]) area=(hFences[i]-1)*(hFences[i]-1) ;
+                if (area<(hFences[i]-1)*(hFences[i]-1)) area=(hFences[i]-1)*(hFences[i]-1) ;
             }
             
         }
@@ -47,8 +48,8 @@ int maximizeSquareArea(int m, int n, int *hFences, int hFencesSize, int *vFences
 
 int main()
 {
-    int m = 6;
-    int n = 7;
+    int m = 3;
+    int n = 9;
 
     int hFences[] = {2};
     int hFencesSize = 1;
@@ -64,7 +65,7 @@ int main()
     }
     else
     {
-        printf("Maximum square area: %d\n", result);
+        printf("Maximum square area: %d\n", result);//gives answer one but after drawing the exact diagram i see that correct ans is 4
     }
 
     return 0;
