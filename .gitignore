@@ -1,0 +1,12 @@
+# Ignore everything
+*
+
+# Allow .c and .py files
+!*.c
+!*.py
+
+# Ignore executable files
+*.exe
+*.out
+*.app
+.vscode
